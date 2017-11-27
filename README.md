@@ -23,25 +23,26 @@ npm run unit
 # run all tests
 npm test
 ```
+
 ## Data setup
 _SQL relation_
 
 - categories:
--- has_many: forums
+    - has_many: forums
 - forums
--- has_many: threads
+    - has_many: threads
 - moderators
 - posts
--- belongs_to: users, threads
+    - belongs_to: users, threads
 - stats
 - threads
--- has_many: contributors, posts
--- belongs_to: user, forum
+    - has_many: contributors, posts
+    - belongs_to: user, forum
 - users
--- has_many(not available in the data): posts, threads
+    - has_many(not available in the data): posts, threads
 
-"""json
-{
+```json
+    {
     "categories": {
         <categories_key>: {
             "forums": {
@@ -119,5 +120,5 @@ _SQL relation_
         "usernameLower": "chrisvfritz",
         ".key": <user_id>
       },
-}
-"""
+    }
+```
